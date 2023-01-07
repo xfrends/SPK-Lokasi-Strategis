@@ -1,0 +1,5 @@
+Nama			: Frendi Triarista
+NIM				: 171021450017
+Kelas			: 07TPLE001
+Judul			: spk seleksi CPNS dengan metode WP
+Sourcecode & db	: https://drive.google.com/drive/folders/1MnVQ5GhJxED_f_CamxTJiZhFiTtYg272?usp=sharing
