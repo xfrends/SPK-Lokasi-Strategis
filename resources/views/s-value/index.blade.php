@@ -33,9 +33,9 @@
                                         $total = $total * pow($data->value, ($criteria->weight / $sum_weight * -1));
                                     @endphp
                                 @else
-                                    <td>{{ pow($data->value, ($criteria->weight / $sum_weight)) }}</td>
+                                    <td>{{ pow($data->value, ($criteria->weight / $sum_weight * 1)) }}</td>
                                     @php
-                                        $total = $total * pow($data->value, ($criteria->weight / $sum_weight));
+                                        $total = $total * pow($data->value, ($criteria->weight / $sum_weight * 1));
                                     @endphp
                                 @endif
                                 @php
