@@ -18,8 +18,12 @@ class ValueController extends Controller
     public function index()
     {
         $criterias = Criteria::get();
+        $sum_weight = 0;
+        foreach ($criterias as $key => $value) {
+            $sum_weight = $sum_weight + $value->weight;
+        }
         $alternatives = Alternative::latest()->with('values')->get();
-        return view('value.index', compact('criterias','alternatives'));
+        return view('value.index', compact('criterias','alternatives','sum_weight'));
     }
 
     /**

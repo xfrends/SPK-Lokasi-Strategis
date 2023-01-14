@@ -24,7 +24,7 @@
                             @endphp
                             @foreach ($alternative->values as $data)
                             @if ($data->criteria_id == $criteria->id)
-                                <td>{{$data->value}}</td>
+                                <td>{{$data->value}} ^ {{$criteria->weight / $sum_weight * -1}}</td>
                                 @php
                                     $empty = false;
                                 @endphp
