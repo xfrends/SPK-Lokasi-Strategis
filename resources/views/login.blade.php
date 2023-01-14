@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>SPK Lokasi Strategis</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('bootstrap-4.0.0-dist/css/bootstrap.css')}}">
 </head>
 
 <body>
@@ -47,8 +47,8 @@
         </div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="{{asset('jquery.js')}}"></script>
+    <script src="{{asset('bootstrap-4.0.0-dist/js/bootstrap.js')}}"></script>
 
 </body>
 

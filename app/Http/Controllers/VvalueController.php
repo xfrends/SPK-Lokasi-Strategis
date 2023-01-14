@@ -41,6 +41,9 @@ class VvalueController extends Controller
             $alternative->svalue = $total;
             $sumtotal = $sumtotal + $total;
         }
+        foreach ($alternatives as $alternative) {
+            $alternative->vvalue = $alternative->svalue / $sumtotal;
+        }
         if ($request->rank) {
             $alternatives = $alternatives->sortByDesc('vvalue');
         }
