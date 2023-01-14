@@ -24,7 +24,11 @@
                             @endphp
                             @foreach ($alternative->values as $data)
                             @if ($data->criteria_id == $criteria->id)
+                                @if ($criteria->attribute == 'cost')
                                 <td>{{$data->value}} ^ {{$criteria->weight / $sum_weight * -1}}</td>
+                                @else
+                                <td>{{$data->value}} ^ {{$criteria->weight / $sum_weight * 1}}</td>
+                                @endif
                                 @php
                                     $empty = false;
                                 @endphp
