@@ -39,11 +39,6 @@ class VvalueController extends Controller
                 }
             }
             $alternative->svalue = $total;
-            // if ($total != 0) {
-            //     $alternative->vvalue = $total / $sumtotal;
-            // } else {
-            //     $alternative->vvalue = 0;
-            // }
             $sumtotal = $sumtotal + $total;
         }
         if ($request->rank) {
