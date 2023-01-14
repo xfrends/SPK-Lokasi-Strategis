@@ -27,7 +27,7 @@ class VvalueController extends Controller
             foreach ($criterias as $criteria) {
                 foreach ($alternative->values as $data) {
                     if ($data->criteria_id == $criteria->id) {
-                        if ($data->attribute == 'cost') {
+                        if ($criteria->attribute == 'cost') {
                             $total = $total * pow($data->value, ($criteria->weight / $sum_weight * -1));
                         } else {
                             $total = $total * pow($data->value, ($criteria->weight / $sum_weight));

@@ -27,7 +27,7 @@
                             @endphp
                             @forelse ($alternative->values as $data)
                                 @if ($data->criteria_id == $criteria->id)
-                                @if ($data->attribute == 'cost')
+                                @if ($criteria->attribute == 'cost')
                                     <td>{{ pow($data->value, ($criteria->weight / $sum_weight * -1)) }}</td>
                                     @php
                                         $total = $total * pow($data->value, ($criteria->weight / $sum_weight * -1));
