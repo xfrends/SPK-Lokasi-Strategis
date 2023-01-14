@@ -21,30 +21,30 @@ class VvalueController extends Controller
             $sum_weight = $sum_weight + $value->weight;
         }
         $alternatives = Alternative::latest()->with('values')->get();
+        $sumtotal = 0;
         foreach ($alternatives as $alternative) {
             $total = 1;
-            $sumtotal = 0;
             foreach ($criterias as $criteria) {
                 foreach ($alternative->values as $data) {
                     if ($data->criteria_id == $criteria->id) {
                         if ($criteria->attribute == 'cost') {
                             $total = $total * pow($data->value, ($criteria->weight / $sum_weight * -1));
                         } else {
-                            $total = $total * pow($data->value, ($criteria->weight / $sum_weight));
+                            $total = $total * pow($data->value, ($criteria->weight / $sum_weight * 1));
                         }
                     }
                 }
                 if ($alternative->values->count() == 0) {
                     $total = 0;
                 }
-                $sumtotal = $sumtotal + $total;
             }
             $alternative->svalue = $total;
-            if ($total != 0) {
-                $alternative->vvalue = $total / $sumtotal;
-            } else {
-                $alternative->vvalue = 0;
-            }
+            // if ($total != 0) {
+            //     $alternative->vvalue = $total / $sumtotal;
+            // } else {
+            //     $alternative->vvalue = 0;
+            // }
+            $sumtotal = $sumtotal + $total;
         }
         if ($request->rank) {
             $alternatives = $alternatives->sortByDesc('vvalue');

@@ -24,7 +24,7 @@
                         <td>{{ $number++ }}</td>
                         <td>{{ $alternative->name }}</td>
                         <td>{{ $alternative->svalue}}</td>
-                        <td>{{ $alternative->vvalue}}</td>
+                        <td>{{ $alternative->svalue / $sumtotal}}</td>
                     </tr>
                     @empty
                     <tr>
